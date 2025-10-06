@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #ffb6c1, #ff69b4, #c71585);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: white;
+      opacity: 0.9;
+      margin-top: 10px;
+      text-align: center;
+      max-width: 500px;
+      line-height: 1.5;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .message {
+      margin-top: 30px;
+      color: #fff;
+      font-size: 1.4rem;
+      font-style: italic;
+      display: none;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: #fff;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {transform: translateY(0) scale(1); opacity: 1;}
+      100% {transform: translateY(-800px) scale(1.5); opacity: 0;}
+    }
+
+    /* Glow effect around text */
+    .glow {
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 15px #ff69b4, 0 0 30px #ff1493;
+      animation: glowPulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from {text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;}
+      to {text-shadow: 0 0 20px #fff, 0 0 40px #ff1493;}
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="glow">For My Beautiful Girl 💕</h1>
+  <p>
+    You are my sunshine on the darkest days,  
+    my calm in every storm, and my forever reason to smile. 🌸
+  </p>
+
+  <button onclick="showMessage()">Click for a Surprise 💌</button>
+
+  <div class="message" id="msg">
+    💖 "No words can describe how much you mean to me.  
+    Every beat of my heart whispers your name." 💖
+  </div>
+
+  <!-- Floating hearts animation -->
+  <script>
+    const body = document.querySelector("body");
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+      body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 400);
+
+    function showMessage() {
+      document.getElementById("msg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
